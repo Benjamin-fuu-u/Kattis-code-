@@ -25,13 +25,13 @@ int main()
     cin>>people;
     int frien;
     cin>>frien;
-    for(int i=1 ;i<=people;i++)
+    for(int i=0;i<people;i++)
     {
     	int k;
     	cin>>k;
 	    money[i]=k;
     }
-    for(int i=0 ;i<friend; i++)
+    for(int i=0 ;i<frien; i++)
     {
     	int a,b;
 	    cin>>a>>b;
@@ -47,15 +47,16 @@ int main()
 				flag =true;
 				break;
 			} 
+			moneyadd=0;
     }
 
      if(flag ==true)
      {
-			 cout<<"impossible"<<endl;
+			 cout<<"IMPOSSIBLE"<<endl;
 		 }
 			else if(flag ==false) 
       {
-				cout<<"possible"<<endl;
+				cout<<"POSSIBLE"<<endl;
 			}
 
 		 

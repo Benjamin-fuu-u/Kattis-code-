@@ -4,7 +4,7 @@ using namespace std;
 map<int,int> money;
 map<int,vector<int>> connect;
 bool visited[10001];
-book flag =false;
+bool flag =false;
 int moneyadd=0;
 void dfs(int people)
 {
@@ -19,26 +19,26 @@ void dfs(int people)
   }
 		  
 }
-int main（）
-｛
+int main()
+{
     int people ;
     cin>>people;
-    int friend;
-    cin>>friend;
+    int frien;
+    cin>>frien;
     for(int i=1 ;i<=people;i++)
     {
-	int k;
-	cin>>k;
-	money[i]=k;
+    	int k;
+    	cin>>k;
+	    money[i]=k;
     }
-    for(int i=0 i<friend; i++)
+    for(int i=0 ;i<friend; i++)
     {
-	int a,b;
-	cin>>a>>b;
-	connect[a].push_back(b);
-	connect [b].push_back(a);
+    	int a,b;
+	    cin>>a>>b;
+	    connect[a].push_back(b);
+    	connect [b].push_back(a);
      }
-    for(int i=0;i<10001;i++)
+    for(int i=0;i<people;i++)
     {
      	if(visited[i]==false) 
 	    dfs(i);
@@ -59,4 +59,4 @@ int main（）
 			}
 
 		 
- ｝
+}

@@ -58,7 +58,7 @@ int main()
     dfs(0);
 
     // first check reach 0 or not
-    for(int i=0;i<n;i++)
+    for(auto i :cin_turn)
     {
         for(int j=0;j<graph[i].size();j++)
         {

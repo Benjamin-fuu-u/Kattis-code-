@@ -4,14 +4,18 @@ using namespace std;
 map<int,int> money;
 map<int,vector<int>> connect;
 bool visited[10001];
+book flag =false;
 int moneyadd=0;
 void dfs(int people)
 {
-	visited[people]=true;
+  visited[people]=true;
   moneyadd+=money[people];
   for(int i=0;i<connect[people].size();i++)
   {
-    dfs(connect[people][i]);
+	  if(visited[connect[people][i]]==false) 
+		{
+      dfs(connect[people][i]);
+		}
   }
 		  
 }
@@ -36,9 +40,23 @@ int main（）
      }
     for(int i=0;i<10001;i++)
     {
-	if(visited[i]==false) 
-	dfs(i);
+     	if(visited[i]==false) 
+	    dfs(i);
+			if(moneyadd!=0)
+			{
+				flag =true;
+				break;
+			} 
     }
+
+     if(flag ==true)
+     {
+			 cout<<"impossible"<<endl;
+		 }
+			else if(flag ==false) 
+      {
+				cout<<"possible"<<endl;
+			}
 
 		 
  ｝

@@ -4,6 +4,7 @@ using namespace std;
 
 unordered_map<int,vector<int>> graph;
 unordered_map<int,vector<int>> picture;
+vector<int> cin_turn;
 bool reach_0 [1000];
 bool be_reach [1000];
 bool visited_dfs[1000];
@@ -44,6 +45,7 @@ int main()
         int ID,m;
         cin>>ID;
         cin>>m;
+        cin_turn .push_back(ID);
         for(int j=0;j<m;j++)
         {
             int road;
@@ -68,7 +70,7 @@ int main()
 
     //print first
     bool check=false;
-    for(int i=0;i<n;i++)
+    for( auto i : cin_turn)
     {
         if(be_reach[i]==false)
         {
@@ -78,7 +80,7 @@ int main()
     }
 
     // print second
-    for(int i=0;i<n;i++)
+    for(auto i:cin_turn)
     {
         if(reach_0[i]==false)
         {
